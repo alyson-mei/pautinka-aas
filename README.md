@@ -1,5 +1,5 @@
 # pautinka-aas
-REST API for kitty Pautinka
+Simple REST API for kitty Pautinka
 
 Pautinka telegram channel: t.me/MyKittyPautinka
 
