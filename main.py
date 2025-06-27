@@ -37,7 +37,7 @@ async def get_random_image(request: Request, db: AsyncSession = Depends(get_db))
     })
 
 @app.get("/pautinka/{image_id}")
-async def get_imeage(request: Request, image_id: int, db: AsyncSession = Depends(get_db)):
+async def get_image(request: Request, image_id: int, db: AsyncSession = Depends(get_db)):
     repo = RepositoryFactory(db).get_repository(Image)
     image = await repo.get_by_id(image_id)
     if not image:
