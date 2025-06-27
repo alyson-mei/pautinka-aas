@@ -38,7 +38,7 @@ async def add_images(repo, folder: str = settings.DOWNLOAD_PATH):
                     "filename": file.name,
                     "file_path": str(file),
                     "content_type": content_type_enum,
-                    "file_size": file.stat().st_size,
+                    "file_size": stat.st_size,
                     "description": None,
                 })
 

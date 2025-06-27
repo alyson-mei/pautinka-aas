@@ -1,5 +1,4 @@
 from fastapi import FastAPI, Depends, HTTPException
-from fastapi.responses import FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -18,6 +17,12 @@ templates = Jinja2Templates(directory="templates")
 @app.on_event("startup")
 async def startup():
     await init_db()
+
+@app.get("/")
+async def read_root(request: Request):
+    return templates.TemplateResponse("root.html", {
+        "request": request
+    })
 
 @app.get("/pautinka")
 async def get_random_image(request: Request, db: AsyncSession = Depends(get_db)):

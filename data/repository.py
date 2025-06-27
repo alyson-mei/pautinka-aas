@@ -85,6 +85,7 @@ async def main():
     async for session  in  get_db():
         repo = RepositoryFactory(session).get_repository(Image)
         result = await repo.get_all()
+        print("Total records:", len(result))
         for record in result:
             print(record.filename, '|', record.file_path)
 
