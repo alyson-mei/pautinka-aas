@@ -20,8 +20,10 @@ class Settings(BaseSettings):
     TELEGRAM_API_HASH: Optional[str] = None
 
     CHANNEL_USERNAME: str = "MyKittyPautinka"
-    DOWNLOAD_PATH: str = "static/images"
-    DOWNLOAD_LIMIT: int = 200
+    SESSION_PATH: str = "sessions/pautinka"
+    IMAGE_PATH: str = "static/images"
+    TEXT_PATH: str = "static/texts"
+    DOWNLOAD_LIMIT: int = 250
 
     class Config:
         env_file = ".env"

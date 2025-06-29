@@ -15,7 +15,7 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
-async def add_images(repo, folder: str = settings.DOWNLOAD_PATH):
+async def add_images(repo, folder: str = settings.IMAGE_PATH):
     logger.info("Adding images to database")
     
     folder_path = Path(folder)
